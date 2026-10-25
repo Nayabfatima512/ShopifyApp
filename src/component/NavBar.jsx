@@ -1,6 +1,6 @@
 import React from 'react'
 import shopifyLogo from '../assets/logo.png'
-import NavManIcon from '../assets/SideKickMajor.png'
+import NavManIcon from '../assets/navManIcon.png'
 import Bell from '../assets/bell.png'
 import Chair from '../assets/chair.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
