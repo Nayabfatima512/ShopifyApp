@@ -1,0 +1,64 @@
+@layer rsuite, theme, base, components, utilities;
+
+@import "rsuite/dist/rsuite.min.css" layer(rsuite);
+@import "tailwindcss";
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.action-tooltip {
+  --rs-tooltip-bg: #ffffff;
+  --rs-tooltip-text: #303030;
+  --rs-tooltip-max-width: none;
+  padding: 2px 12px;
+  max-width: none;
+  background: #ffffff;
+  color: #303030;
+  border: 1px solid #dadada;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  white-space: nowrap;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.15));
+}
+/* arrow: ek rotated square jo border ke upar baithta hai */
+.action-tooltip::before { content: none; display: none; }
+.action-tooltip::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  top: calc(50% - 4.5px);
+  margin: 0;
+  background: #ffffff;
+  border: 0 solid #dadada;
+  transform: rotate(45deg);
+}
+/* tooltip button ke LEFT mein -> arrow RIGHT edge par */
+.action-tooltip[data-placement*="left"]::after {
+  right: -5px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+}
+/* jagah na ho to RIGHT par flip -> arrow LEFT edge par */
+.action-tooltip[data-placement*="right"]::after {
+  left: -5px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+}
+
+
+.custom-table .rs-table-header,
+.custom-table .rs-table-header .rs-table-cell,
+.custom-table .rs-table-header .rs-table-cell-content {
+  background-color: #dce8d2 !important;
+}
